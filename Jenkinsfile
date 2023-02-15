@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'g++ -o PNK_OP.cpp'
+                sh 'g++ PNK_OP.cpp -o Kamath' 
             }
         }
         stage('Test') { 
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh './output'
+                sh './Kamath'
                 //error 'Pipeline Failed' 
             }
         }
